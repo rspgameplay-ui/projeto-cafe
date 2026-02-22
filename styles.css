@@ -12,14 +12,16 @@ html {
     width: 100%;
     height: 100%;
 }
-
-header {
+.cabecalho {
+    margin: 0px 250px;
     display: flex;
     justify-content: space-evenly;
+}
+
+header {
     background-color: black;
     border-bottom: 1px solid rgb(177, 115, 0);
 }
-
 header img {
     padding: 10px;
     width: 70px;
@@ -46,8 +48,7 @@ header nav a:hover {
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-top: 150px;
-    margin-left: 350px; /* Sua propriedade original */
+    margin: 100px 400px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.682);
 }
 
@@ -93,49 +94,3 @@ header nav a:hover {
     backdrop-filter: blur(4px);
 }
 
-/* =========================================
-   MEDIA QUERIES (APENAS PARA TELAS MENORES)
-   ========================================= */
-
-/* Para Tablets (Telas até 1024px) */
-@media (max-width: 1024px) {
-    .inicio {
-        margin-left: 100px; /* Reduzi a margem para não cortar o texto */
-    }
-}
-
-/* Para Celulares (Telas até 768px) */
-@media (max-width: 768px) {
-    header {
-        flex-direction: row; 
-        align-items: center;
-        padding-bottom: 20px;
-    }
-
-    header nav {
-        padding-top: 10px;
-    }
-
-    header nav a {
-        margin: 10px;
-    }
-
-    .inicio {
-        display: flex;
-        margin-top: 80px;
-        justify-content: left;
-        text-align: left;
-    }
-
-    .inicio h1 {
-        font-size: 3em;
-    }
-
-    .inicio p {
-        text-align: left;
-    }
-
-    .video div {
-        background: rgba(0, 0, 0, 0.6); 
-    }
-}
