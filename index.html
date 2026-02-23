@@ -1,48 +1,162 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Cafeteria Premium</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
+    <header class="header">
         <div class="cabecalho">
-            <div>
-                <img src="imagens/java-coffee-cup-logo.png" alt="logo café">
+            <div class="logo">
+                <img src="imagens/java-coffee-cup-logo.png" alt="Logo Café">
+                <span>Café</span>
             </div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Sobre</a>
-                <a href="#">Menu</a>
-                <a href="#">Endereço</a>
-                <a href="#">Avaliações</a>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#menu">Menu</a>
+                <a href="#endereco">Endereço</a>
+                <a href="#avaliacoes">Avaliações</a>
             </nav>
         </div>
     </header>
-    <section class="inicio">
-        <div id="texto">
-            <h1>CONHEÇA <span>NOSSA</span> <br> CAFETERIA</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, atque. Harum velit doloribus, voluptatum voluptatibus magnam quos sequi a, delectus, dolores alias quas eius at aliquid? Voluptatibus voluptatum earum hic! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure reprehenderit nemo quam sunt, unde autem commodi reiciendis quis. Veritatis tempore deleniti temporibus blanditiis fugiat, fugit rerum quidem numquam recusandae ipsum.</p>
-        </div>
-    </section>
-    <section class="video">
-        <div></div>
-        <video src="/video/3044454-hd_1920_1080_25fps.mp4" loop muted autoplay ></video>
-    </section>
 
-    <section>
-        <div>
-            <h1>MENU</h1>
-        </div>
-        <div>
-            <img src="/imagens/pexels-juanpphotoandvideo-894695.jpg" alt="foto de inicio">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem vitae repudiandae ad dolorum impedit. Modi magni at veniam ipsa! Minus animi nisi dolorum perspiciatis aut explicabo fuga? Expedita, vel earum!</p>
-        </div>
+    <div class="video-background">
+        <video src="video/3044454-hd_1920_1080_25fps.mp4" loop muted autoplay playsinline></video>
+        <div class="overlay"></div>
+    </div>
 
-    </section>
-    
+    <main>
+        <section id="home" class="inicio hero">
+            <div class="texto animate-on-scroll">
+                <h1>CONHEÇA <span class="highlight">NOSSA</span> <br> CAFETERIA</h1>
+                <p>Descubra o verdadeiro sabor do café arábica. Um ambiente preparado para oferecer a melhor
+                    experiência, desde o grão até a sua xícara. Venha viver momentos inesquecíveis.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">Ver Menu</a>
+                    <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <div class="section-title animate-on-scroll">
+                <h2>Nosso Menu</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="menu-content animate-on-scroll">
+                <div class="menu-image">
+                    <img src="imagens/pexels-juanpphotoandvideo-894695.jpg" alt="Café Especial">
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item card">
+                        <h3>Espresso Premium</h3>
+                        <p>Intenso e encorpado, com notas de chocolate e caramelo.</p>
+                        <span class="price">R$ 8,00</span>
+                    </div>
+                    <div class="menu-item card">
+                        <h3>Cappuccino Italiano</h3>
+                        <p>Espresso perfeito com leite finamente vaporizado e espuma cremosa.</p>
+                        <span class="price">R$ 12,00</span>
+                    </div>
+                    <div class="menu-item card">
+                        <h3>Latte Macchiato</h3>
+                        <p>Leite cremoso manchado com uma forte dose de espresso.</p>
+                        <span class="price">R$ 14,00</span>
+                    </div>
+                    <div class="menu-item card">
+                        <h3>Frappuccino de Caramelo</h3>
+                        <p>Refrescante e doce bebida gelada com café, gelo e calda de caramelo.</p>
+                        <span class="price">R$ 18,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre-section">
+            <div class="section-title animate-on-scroll">
+                <h2>Sobre Nós</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="sobre-content card animate-on-scroll">
+                <p>Nossa paixão começou com um pequeno grão de café e o desejo de criar a xícara de café mais perfeita.
+                    Hoje, nosso estabelecimento acolhedor tornou-se o lar não apenas de grãos de café excepcionais, mas
+                    também de uma comunidade de amantes do café que compartilham o nosso entusiasmo. Junte-se a nós para
+                    provar, aprender e desfrutar do que faz do nosso café algo verdadeiramente especial.</p>
+            </div>
+        </section>
+
+        <section id="endereco" class="sobre-section">
+            <div class="section-title animate-on-scroll">
+                <h2>Endereço</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="sobre-content card animate-on-scroll">
+                <p>Rua dos Cafezais Milagrosos, 1234<br>Bairro Aroma Suave<br>Cidade do Café, SP<br>CEP: 12345-678</p>
+                <div style="margin-top:20px;">
+                    <a href="#" class="btn btn-secondary">Ver no Mapa</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Cafeteria Premium. Todos os direitos reservados. Feito com amor por café.</p>
+    </footer>
+
+    <script>
+        // Toggle Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('aberto');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('aberto');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
+
 </html>
