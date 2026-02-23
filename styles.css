@@ -12,16 +12,24 @@ html {
     width: 100%;
     height: 100%;
 }
+
+/* =============================
+   HEADER
+   ============================= */
+header {
+    background-color: black;
+    border-bottom: 1px solid rgb(177, 115, 0);
+    position: relative;
+    z-index: 10;
+}
+
 .cabecalho {
     margin: 0px 250px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
-header {
-    background-color: black;
-    border-bottom: 1px solid rgb(177, 115, 0);
-}
 header img {
     padding: 10px;
     width: 70px;
@@ -43,7 +51,27 @@ header nav a:hover {
     border-bottom: 1px solid orange;
 }
 
+/* Menu hamburguer (escondido por padrão no desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    padding: 10px;
+}
 
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: aliceblue;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* =============================
+   SEÇÃO INÍCIO
+   ============================= */
 .inicio {
     display: flex;
     justify-content: left;
@@ -69,7 +97,9 @@ header nav a:hover {
     text-align: justify;
 }
 
-
+/* =============================
+   VÍDEO DE FUNDO
+   ============================= */
 .video {
     top: 0;
     position: fixed;
@@ -87,10 +117,207 @@ header nav a:hover {
     position: fixed;
     top: 0;
     background: linear-gradient(
-        to right, 
-        rgba(0, 0, 0, 0.85) 35%, 
-        rgba(0, 0, 0, 0.25) 30%, 
+        to right,
+        rgba(0, 0, 0, 0.85) 35%,
+        rgba(0, 0, 0, 0.25) 30%,
         rgba(0, 0, 0, 0.85) 35%);
     backdrop-filter: blur(4px);
 }
 
+/* =============================
+   SEÇÃO MENU
+   ============================= */
+section:not(.inicio):not(.video) {
+    padding: 60px 250px;
+    color: aliceblue;
+}
+
+section:not(.inicio):not(.video) h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: rgb(177, 115, 0);
+    text-align: center;
+}
+
+section:not(.inicio):not(.video) > div:last-child {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+section:not(.inicio):not(.video) img {
+    width: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+section:not(.inicio):not(.video) p {
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   MEDIA QUERY — DESKTOP GRANDE (acima de 1440px)
+   ===================================================== */
+@media (min-width: 1440px) {
+    .cabecalho {
+        margin: 0 350px;
+    }
+
+    .inicio {
+        margin: 120px 500px;
+    }
+
+    .inicio h1 {
+        font-size: 5.5em;
+    }
+
+    .inicio p {
+        font-size: 1.1em;
+        max-width: 900px;
+    }
+
+    section:not(.inicio):not(.video) {
+        padding: 80px 350px;
+    }
+
+    section:not(.inicio):not(.video) img {
+        width: 500px;
+    }
+}
+
+
+/* =====================================================
+   MEDIA QUERY — TABLET (768px até 1024px)
+   ===================================================== */
+@media (max-width: 1024px) {
+    .cabecalho {
+        margin: 0 40px;
+        justify-content: space-between;
+    }
+
+    header nav a {
+        margin: 10px;
+        font-size: 0.9em;
+    }
+
+    .inicio {
+        margin: 80px 60px;
+    }
+
+    .inicio h1 {
+        font-size: 3.2em;
+    }
+
+    .inicio p {
+        font-size: 0.95em;
+        max-width: 100%;
+    }
+
+    section:not(.inicio):not(.video) {
+        padding: 50px 60px;
+    }
+
+    section:not(.inicio):not(.video) > div:last-child {
+        flex-direction: column;
+    }
+
+    section:not(.inicio):not(.video) img {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+
+/* =====================================================
+   MEDIA QUERY — MOBILE (até 768px)
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* Header: logo + botão hamburguer */
+    .cabecalho {
+        margin: 0 20px;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    header img {
+        width: 55px;
+    }
+
+    /* Exibe o botão hamburguer */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Nav vira menu vertical, oculto por padrão */
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0 20px 0;
+        background-color: black;
+        border-top: 1px solid rgb(177, 115, 0);
+    }
+
+    /* Classe adicionada via JS para abrir o menu */
+    header nav.aberto {
+        display: flex;
+    }
+
+    header nav a {
+        margin: 8px 20px;
+        font-size: 1em;
+        display: block;
+    }
+
+    /* Seção início */
+    .inicio {
+        margin: 60px 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .inicio h1 {
+        font-size: 2.2em;
+        line-height: 1.2;
+    }
+
+    .inicio p {
+        font-size: 0.9em;
+        padding-top: 20px;
+    }
+
+    /* Overlay do vídeo mais escuro no mobile para legibilidade */
+    .video div {
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(6px);
+    }
+
+    /* Seção menu */
+    section:not(.inicio):not(.video) {
+        padding: 40px 20px;
+    }
+
+    section:not(.inicio):not(.video) h1 {
+        font-size: 2em;
+    }
+
+    section:not(.inicio):not(.video) > div:last-child {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    section:not(.inicio):not(.video) img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    section:not(.inicio):not(.video) p {
+        font-size: 0.9em;
+    }
+}
